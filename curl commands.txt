@@ -1,6 +1,20 @@
-curl -X GET -H "Authorization: Bearer YOUR_TOKEN" https://your-api-gateway-url/retrieve
-curl -X POST -H "Authorization: Bearer YOUR_TOKEN" -H "Content-Type: application/json" -d '{"name": "Your Name"}' https://your-api-gateway-url/store
-curl -X PUT -H "Authorization: Bearer YOUR_TOKEN" -H "Content-Type: application/json" -d '{"name": "New Name"}' https://your-api-gateway-url/edit/YOUR_ID
-curl -X DELETE -H "Authorization: Bearer YOUR_TOKEN" https://your-api-gateway-url/delete/YOUR_ID
 
+Retrieve Data:
+bash
+Copy code
+curl http://localhost:5000/api/data
+Store Data:
 
+bash
+Copy code
+curl -X POST -H "Content-Type: application/json" -d '{"id": "1", "name": "John Doe"}' http://localhost:5000/api/data
+Update Data:
+
+bash
+Copy code
+curl -X PUT -H "Content-Type: application/json" -d '{"name": "Updated Name"}' http://localhost:5000/api/data/1
+Delete Data:
+
+bash
+Copy code
+curl -X DELETE http://localhost:5000/api/data/1
